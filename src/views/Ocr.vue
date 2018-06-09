@@ -1,5 +1,5 @@
 <template>
-    <my-page title="首页">
+    <my-page title="图片转文字">
         <form action="http://localhost:1026/net/files" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <input id="file" type="file" name="logo" class="from-control">
