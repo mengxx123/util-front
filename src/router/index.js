@@ -4,6 +4,7 @@ import Router from 'vue-router'
 const Ocr = resolve => require(['@/views/Ocr'], resolve)
 const Nlp = resolve => require(['@/views/Nlp'], resolve)
 const About = resolve => require(['@/views/About'], resolve)
+const Uuid = resolve => require(['@/views/Uuid'], resolve)
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
 Vue.use(Router)
@@ -20,6 +21,10 @@ let routes = [
     {
         path: '/nlp',
         component: Nlp
+    },
+    {
+        path: '/uuid',
+        component: Uuid
     },
     {
         path: '/about',
