@@ -9,6 +9,9 @@
                 <ui-list-item title="分词" to="/nlp">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
+                <ui-list-item title="图像识别" to="/image_recognition">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
                 <ui-list-item title="UUID 生成器" to="/uuid">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
