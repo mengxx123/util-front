@@ -6,6 +6,7 @@ const Nlp = resolve => require(['@/views/Nlp'], resolve)
 const ImageRecognition = resolve => require(['@/views/ImageRecognition'], resolve)
 const About = resolve => require(['@/views/About'], resolve)
 const Uuid = resolve => require(['@/views/Uuid'], resolve)
+const School = resolve => require(['@/views/School'], resolve)
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
 Vue.use(Router)
@@ -30,6 +31,10 @@ let routes = [
     {
         path: '/uuid',
         component: Uuid
+    },
+    {
+        path: '/school',
+        component: School
     },
     {
         path: '/about',
