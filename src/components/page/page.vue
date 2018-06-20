@@ -18,6 +18,9 @@
                 <ui-list-item title="高校查询" to="/school">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
+                <ui-list-item title="色盲色弱测试" to="/blind">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
                 <ui-list-item title="关于" to="/about">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
