@@ -12,7 +12,11 @@
         <div class="ui-loading" v-if="loading">
             <ui-circular-progress :size="24"/>
         </div>
-        <pre v-if="result">{{ result }}</pre>
+        <div v-if="result">
+            <div class="info">{{ result }}</div>
+            <div class="info">去掉连字符：</div>
+            <div class="info">{{ simpleResult }}</div>
+        </div>
     </my-page>
 </template>
 
@@ -41,6 +45,11 @@
                 }
             }
         },
+        computed: {
+            simpleResult() {
+                return this.result.replace(/-/g, '')
+            }
+        },
         mounted() {
             console.log(uuidv1())
         },
@@ -63,6 +72,9 @@
 <style lang="scss" scoped>
 .btns {
     margin-top: 16px;
+    margin-bottom: 16px;
+}
+.info {
     margin-bottom: 16px;
 }
 </style>
