@@ -8,6 +8,7 @@ const About = resolve => require(['@/views/About'], resolve)
 const Uuid = resolve => require(['@/views/Uuid'], resolve)
 const School = resolve => require(['@/views/School'], resolve)
 const Blind = resolve => require(['@/views/Blind'], resolve)
+const Car = resolve => require(['@/views/Car'], resolve)
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
 Vue.use(Router)
@@ -44,6 +45,10 @@ let routes = [
     {
         path: '/about',
         component: About
+    },
+    {
+        path: '/car',
+        component: Car
     },
     {
         path: '*',
