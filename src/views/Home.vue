@@ -1,5 +1,5 @@
 <template>
-    <my-page title="工具集" :page="page">
+    <my-page title="智能平台" :page="page">
         <app-list :data="groups" />
 
         <div class="tool-list">
@@ -24,7 +24,18 @@
             return {
                 groups: [
                     {
-                        // name: '基础工具',
+                        name: '文本处理',
+                        apps: [
+                            {
+                                name: '文本纠错',
+                                desc: '',
+                                icon: '/static/img/build.svg',
+                                to: '/textCheck'
+                            },
+                        ]
+                    },
+                    {
+                        name: '基础工具',
                         apps: [
                             {
                                 name: '图片转文字',

@@ -12,6 +12,7 @@ const Blind = resolve => require(['@/views/Blind'], resolve)
 const Car = resolve => require(['@/views/Car'], resolve)
 const AudioToText = resolve => require(['@/views/AudioToText'], resolve)
 const AudioToTextHelp = resolve => require(['@/views/AudioToTextHelp'], resolve)
+const TextCheck = resolve => require(['@/views/TextCheck'], resolve)
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
 Vue.use(Router)
@@ -60,6 +61,10 @@ let routes = [
     {
         path: '/audio_to_text/help',
         component: AudioToTextHelp
+    },
+    {
+        path: '/textCheck',
+        component: TextCheck
     },
     {
         path: '*',
