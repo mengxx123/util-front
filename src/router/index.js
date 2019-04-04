@@ -4,8 +4,8 @@ import Router from 'vue-router'
 const Home = resolve => require(['@/views/Home'], resolve)
 const Ocr = resolve => require(['@/views/Ocr'], resolve)
 const Nlp = resolve => require(['@/views/Nlp'], resolve)
+const NlpVip = resolve => require(['@/views/NlpVip'], resolve)
 const ImageRecognition = resolve => require(['@/views/ImageRecognition'], resolve)
-const About = resolve => require(['@/views/About'], resolve)
 const Uuid = resolve => require(['@/views/Uuid'], resolve)
 const School = resolve => require(['@/views/School'], resolve)
 const Blind = resolve => require(['@/views/Blind'], resolve)
@@ -30,6 +30,10 @@ let routes = [
         component: Nlp
     },
     {
+        path: '/nlp/vip',
+        component: NlpVip
+    },
+    {
         path: '/image_recognition',
         component: ImageRecognition
     },
@@ -44,10 +48,6 @@ let routes = [
     {
         path: '/blind',
         component: Blind
-    },
-    {
-        path: '/about',
-        component: About
     },
     {
         path: '/car',

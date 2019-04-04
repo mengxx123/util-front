@@ -1,6 +1,6 @@
 <template>
     <my-page title="分词">
-        <ui-text-field v-model="text" label="文本" multiLine :rows="3" :rowsMax="6" hintText="" :maxLength="5000" />
+        <ui-text-field v-model="text" label="文本" multiLine :rows="3" :rowsMax="6" hintText="" :maxLength="30000" />
         <div class="btns">
             <ui-raised-button class="btn" label="处理" primary @click="handle" />
         </div>
@@ -42,10 +42,10 @@
                     })
                     return
                 }
-                if (this.text.length > 5000) {
+                if (this.text.length > 30000) {
                     this.$message({
                         type: 'danger',
-                        text: '文本字数不能大于 5000'
+                        text: '文本字数不能大于 30000'
                     })
                     return
                 }
