@@ -31,7 +31,7 @@
                                 desc: '',
                                 icon: '/static/img/build.svg',
                                 to: '/textCheck'
-                            },
+                            }
                         ]
                     },
                     {
