@@ -1,13 +1,15 @@
 <template>
-    <my-page title="分词">
-        <ui-text-field v-model="text" label="文本" multiLine :rows="3" :rowsMax="6" hintText="" :maxLength="5000" />
-        <div class="btns">
-            <ui-raised-button class="btn" label="处理" primary @click="handle" />
+    <my-page title="分词" :page="page">
+        <div class="common-container container">
+            <ui-text-field v-model="text" label="文本" multiLine :rows="3" :rowsMax="6" hintText="" :maxLength="5000" />
+            <div class="btns">
+                <ui-raised-button class="btn" label="处理" primary @click="handle" />
+            </div>
+            <div class="ui-loading" v-if="loading">
+                <ui-circular-progress :size="24"/>
+            </div>
+            <pre v-if="result">{{ result }}</pre>
         </div>
-        <div class="ui-loading" v-if="loading">
-            <ui-circular-progress :size="24"/>
-        </div>
-        <pre v-if="result">{{ result }}</pre>
     </my-page>
 </template>
 
@@ -27,7 +29,9 @@
                         {
                             type: 'icon',
                             icon: 'help',
-                            to: '/help'
+                            href: 'https://project.yunser.com/products/aa799780fef811e891d33b6ec003c93d',
+                            target: '_blank',
+                            title: '帮助'
                         }
                     ]
                 }

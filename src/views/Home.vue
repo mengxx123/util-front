@@ -1,19 +1,7 @@
 <template>
-    <my-page title="工具集" :page="page">
-        <app-list :data="groups" />
-
-        <div class="tool-list">
-            <div class="mu-paper list-item mu-paper-round mu-paper-1" 
-                v-for="app in apps">
-                <router-link class="link" :to="app.to" :href="app.href" :target="app.target">
-                    <img :src="app.icon" class="img">
-                    <div class="info">
-                        <h3 class="text">{{ app.name }}</h3>
-                        <div class="desc">{{ app.desc }}</div>
-                    </div>
-                    <i class="icon icon-heart"></i>
-                </router-link>
-            </div>
+    <my-page title="智能平台" :page="page">
+        <div class="common-container container">
+            <app-list :data="groups" />
         </div>
     </my-page>
 </template>
@@ -24,7 +12,18 @@
             return {
                 groups: [
                     {
-                        // name: '基础工具',
+                        name: '文本处理',
+                        apps: [
+                            {
+                                name: '文本纠错',
+                                desc: '',
+                                icon: '/static/img/build.svg',
+                                to: '/textCheck'
+                            },
+                        ]
+                    },
+                    {
+                        name: '基础工具',
                         apps: [
                             {
                                 name: '图片转文字',
@@ -50,6 +49,11 @@
                                 icon: '/static/img/build.svg',
                                 to: '/audio_to_text'
                             },
+                        ]
+                    },
+                                        {
+                        name: '其他',
+                        apps: [
                             {
                                 name: 'UUID 生成器',
                                 desc: '',
@@ -73,16 +77,31 @@
                                 desc: '',
                                 icon: '/static/img/build.svg',
                                 to: '/car'
+                            },
+                            {
+                                name: '机器人',
+                                desc: '',
+                                icon: '/static/img/build.svg',
+                                to: 'xxx',
+                                href: 'https://robot.yunser.com/',
+                                target: '_blank'
                             }
                         ]
-                    }
+                    },
                 ],
                 page: {
                     menu: [
                         {
                             type: 'icon',
+                            icon: 'search',
+                            href: 'https://search.yunser.com?utm_source=ai',
+                            target: '_blank',
+                            title: '应用搜索'
+                        },
+                        {
+                            type: 'icon',
                             icon: 'apps',
-                            href: 'https://app.yunser.com/',
+                            href: 'https://app.yunser.com?utm_source=ai',
                             target: '_blank',
                             title: '应用'
                         }

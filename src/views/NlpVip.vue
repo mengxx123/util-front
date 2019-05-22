@@ -1,13 +1,15 @@
 <template>
     <my-page title="分词">
-        <ui-text-field v-model="text" label="文本" multiLine :rows="3" :rowsMax="6" hintText="" :maxLength="30000" />
-        <div class="btns">
-            <ui-raised-button class="btn" label="处理" primary @click="handle" />
+        <div class="common-container container">
+            <ui-text-field v-model="text" label="文本" multiLine :rows="3" :rowsMax="6" hintText="" :maxLength="30000" />
+            <div class="btns">
+                <ui-raised-button class="btn" label="处理" primary @click="handle" />
+            </div>
+            <div class="ui-loading" v-if="loading">
+                <ui-circular-progress :size="24"/>
+            </div>
+            <pre v-if="result">{{ result }}</pre>
         </div>
-        <div class="ui-loading" v-if="loading">
-            <ui-circular-progress :size="24"/>
-        </div>
-        <pre v-if="result">{{ result }}</pre>
     </my-page>
 </template>
 

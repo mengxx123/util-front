@@ -1,18 +1,20 @@
 <template>
-    <my-page title="图片转文字">
-        <form action="http://localhost:1026/net/files" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <input id="file" type="file" name="logo" class="from-control">
-            </div>
-            <div class="btns">
-                <ui-raised-button class="btn" label="识别" primary @click="upload" />
-            </div>
-            <div class="ui-loading" v-if="loading">
-                <ui-circular-progress :size="24"/>
-            </div>
+    <my-page title="图片转文字" :page="page">
+        <div class="common-container container">
+            <form action="http://localhost:1026/net/files" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input id="file" type="file" name="logo" class="from-control">
+                </div>
+                <div class="btns">
+                    <ui-raised-button class="btn" label="识别" primary @click="upload" />
+                </div>
+                <div class="ui-loading" v-if="loading">
+                    <ui-circular-progress :size="24"/>
+                </div>
 
-            <pre v-if="result">{{ result }}</pre>
-        </form>
+                <pre v-if="result">{{ result }}</pre>
+            </form>
+        </div>
     </my-page>
 </template>
 
@@ -30,7 +32,9 @@
                         {
                             type: 'icon',
                             icon: 'help',
-                            to: '/help'
+                            href: 'https://project.yunser.com/products/6a11ff30570811e9973aa373f4f636b0',
+                            target: '_blank',
+                            title: '帮助'
                         }
                     ]
                 }
@@ -60,7 +64,7 @@
                         let result = response.data.data.path.replace('public', '').replace(/\\/g, '/').replace(/^\//, '')
                         console.log('结果')
                         console.log(result)
-                        this.$http.get('/orc?path=' + result).then(
+                        this.$http.get(`/orc?path=${result}`).then(
                             response => {
                                 let data = response.data
                                 console.log('结果2')

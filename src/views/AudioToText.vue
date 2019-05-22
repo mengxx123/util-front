@@ -1,29 +1,31 @@
 <template>
     <my-page title="语音转文字" :page="page">
-        <form action="http://localhost:1026/net/files" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <input id="file" type="file" name="logo" class="from-control">
-            </div>
-            <br>
-            <ui-select-field v-model="devPid" label="类型">
-                <ui-menu-item :value="1536" title="普通话（支持简单的英文）"/>
-                <ui-menu-item :value="1537" title="普通话（纯中文）"/>
-                <ui-menu-item :value="1737" title="英语"/>
-                <ui-menu-item :value="1637" title="粤语"/>
-                <ui-menu-item :value="1837" title="四川话"/>
-                <ui-menu-item :value="1936" title="普通话（远距离录音）"/>
-            </ui-select-field>
-            <div class="btns">
-                <ui-raised-button class="btn" label="识别" primary @click="upload" />
-            </div>
-            <div class="ui-loading" v-if="loading">
-                <ui-circular-progress :size="24"/>
-            </div>
+        <div class="common-container container">
+            <form action="http://localhost:1026/net/files" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input id="file" type="file" name="logo" class="from-control">
+                </div>
+                <br>
+                <ui-select-field v-model="devPid" label="类型">
+                    <ui-menu-item :value="1536" title="普通话（支持简单的英文）"/>
+                    <ui-menu-item :value="1537" title="普通话（纯中文）"/>
+                    <ui-menu-item :value="1737" title="英语"/>
+                    <ui-menu-item :value="1637" title="粤语"/>
+                    <ui-menu-item :value="1837" title="四川话"/>
+                    <ui-menu-item :value="1936" title="普通话（远距离录音）"/>
+                </ui-select-field>
+                <div class="btns">
+                    <ui-raised-button class="btn" label="识别" primary @click="upload" />
+                </div>
+                <div class="ui-loading" v-if="loading">
+                    <ui-circular-progress :size="24"/>
+                </div>
 
-            <div class="result" v-if="result">
-                <h2 class="title">{{ result }}</h2>
-            </div>
-        </form>
+                <div class="result" v-if="result">
+                    <h2 class="title">{{ result }}</h2>
+                </div>
+            </form>
+        </div>
     </my-page>
 </template>
 
@@ -49,7 +51,8 @@
                         {
                             type: 'icon',
                             icon: 'help',
-                            to: '/audio_to_text/help',
+                            href: 'https://project.yunser.com/products/0e61f550570311e9973aa373f4f636b0',
+                            target: '_blank',
                             title: '帮助'
                         }
                     ]
