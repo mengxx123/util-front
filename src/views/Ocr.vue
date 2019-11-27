@@ -64,7 +64,7 @@
                         let result = response.data.data.path.replace('public', '').replace(/\\/g, '/').replace(/^\//, '')
                         console.log('结果')
                         console.log(result)
-                        this.$http.get(`/orc?path=${result}`).then(
+                        this.$http.get(`/ai/orc?path=${result}`).then(
                             response => {
                                 let data = response.data
                                 console.log('结果2')
