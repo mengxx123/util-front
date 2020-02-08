@@ -1,5 +1,5 @@
 <template>
-    <my-page title="UUID 生成器">
+    <my-page title="UUID 生成器" :page="page">
         <div class="common-container container">
             <ui-select-field v-model="version" label="版本">
                 <ui-menu-item value="1" title="v1"/>
@@ -41,7 +41,9 @@
                         {
                             type: 'icon',
                             icon: 'help',
-                            to: '/help'
+                            href: 'https://project.yunser.com/products/b61de480412111eab86b93523ec1568a',
+                            target: '_blank',
+                            title: '帮助'
                         }
                     ]
                 }
